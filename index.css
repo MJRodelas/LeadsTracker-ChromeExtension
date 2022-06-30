@@ -21,9 +21,16 @@ button{
     /*adding space from the bottom of the text you are typing*/
     padding-bottom: 10px;
     /*removing borders*/
-    border: 0;
+    border: 1px solid #5f9341;
     /*adding curved edges on the button*/
     border-radius:5px 5px;
+}
+
+#delete-btn{
+    /*changing font color of delete button*/
+    color:#5f9341;
+    /*changing background color*/
+    background-color: white;
 }
 
 input{
