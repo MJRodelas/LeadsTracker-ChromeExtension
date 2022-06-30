@@ -7,10 +7,6 @@ const ulEl = document.getElementById("ul-el")
 
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads")) //Get Leads from the local storage of the browser
 
-const tabs = [
-    {url: "https://www.mj/com"}
-
-]
 
 if (leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
@@ -39,13 +35,23 @@ deleteBtn.addEventListener("dblclick", function()  {
 })
 
 saveTabBtn.addEventListener("click", function()  {
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myLeads", JSON.stringify (myLeads)) //Save Leads to local storage on the browser
-    render(myLeads)
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+
+        let activeTab = tabs[0];
+        let activeTabId = activeTab.id; // or do whatever you need
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify (myLeads)) //Save Leads to local storage on the browser
+        render(myLeads)
+     });
+
+
 })
 
 
 inputBtn.addEventListener("click", function() {
+
+
+
     myLeads.push(inputEl.value)
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify (myLeads)) //Save Leads to local storage on the browser
