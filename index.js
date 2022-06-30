@@ -12,8 +12,13 @@ inputBtn.addEventListener("click", function() {
 function renderLeads() {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
-        // Refactor the code below to use a template string
-        listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
+        //Template string - much easier to read like what you see on HTML page
+        listItems += `
+        <li> 
+            <a target='_blank' href='${myLeads[i]}'> 
+            ${myLeads[i]}
+            </a>
+        </li>`       
     }
     ulEl.innerHTML = listItems  
 }
