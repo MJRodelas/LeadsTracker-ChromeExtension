@@ -1,21 +1,56 @@
-body {
+  /*comment*/    /**/
+
+  body{
     margin: 0;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    min-width: 400px;
 }
 
-input {
+button{
+    /*changing font color*/
+    color:white;
+    /*changing background color*/
+    background-color: #5f9341;
+    /*adding space from the left of the text you are typing*/
+    padding-left: 20px;
+    /*adding space from the right of the text you are typing*/
+    padding-right: 20px;
+    /*adding space from the top of the text you are typing*/
+    padding-top: 10px;
+    /*adding space from the bottom of the text you are typing*/
+    padding-bottom: 10px;
+    /*removing borders*/
+    border: 0;
+    /*adding curved edges on the button*/
+    border-radius:5px 5px;
+}
+
+input{
+    /*once the browser is small or big, the width of text field adjusts and still full width of the page*/
     width: 100%;
-    padding: 10px;
+    /*adding space from all sides of the text you are typing - shorthand*/
+    padding: 10px 10px;
+    /*used to not overflow the page add the width and padding within the page*/
     box-sizing: border-box;
-    border: 1px solid #5f9341;
-    margin-bottom: 4px;
+    /*change styling of text field*/
+    border: 2px solid #5f9341;
+    /*change styling of font on the text field*/
+    font-weight: bold;
+    /*Adding space at the bottom before the next element*/    
+    margin-bottom: 5px;    
 }
 
-button {
-    background: #5f9341;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    font-weight: bold;
+ul {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-top: 5px;
+}
+
+a {
+color: #5f9341;
 }
