@@ -2,10 +2,15 @@ let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const deleteBtn = document.getElementById("delete-btn")
+const saveTabBtn = document.getElementById("savetab-btn")
 const ulEl = document.getElementById("ul-el")
 
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads")) //Get Leads from the local storage of the browser
 
+const tabs = [
+    {url: "https://www.mj/com"}
+
+]
 
 if (leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
@@ -31,6 +36,12 @@ deleteBtn.addEventListener("dblclick", function()  {
     localStorage.clear() //clear localStorage
     myLeads = [] //clear Array
     render(myLeads) //clear DOM
+})
+
+saveTabBtn.addEventListener("click", function()  {
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myLeads", JSON.stringify (myLeads)) //Save Leads to local storage on the browser
+    render(myLeads)
 })
 
 
